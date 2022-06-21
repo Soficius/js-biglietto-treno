@@ -1,6 +1,6 @@
 // funzione per arrotondare in base ai decimali richiesti
 function round(num, decimalPlaces = 0) {
-    var p = Math.pow(10, decimalPlaces);
+    const p = Math.pow(10, decimalPlaces);
     return Math.round(num * p) / p;
 }
 // stabilisco il prezzo al chilometro
