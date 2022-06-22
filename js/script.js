@@ -1,17 +1,13 @@
-// funzione per arrotondare in base ai decimali richiesti
-function round(num, decimalPlaces = 0) {
-    const p = Math.pow(10, decimalPlaces);
-    return Math.round(num * p) / p;
-}
-// stabilisco il prezzo al chilometro
-const prezzoKm = 0.21
-console.log('prezzoKm:',prezzoKm)
 
 // chiedo all'utente i numeri di chilimetri e l'età del passeggero
 const numKilometers = parseFloat(prompt('quanti chilometri vuoi percorrere?'))
 console.log('numKilometers:',numKilometers)
 const age = parseInt(prompt ('Quanti anni hai?'))
 console.log('age:',age)
+
+// stabilisco il prezzo al chilometro
+const prezzoKm = 0.21
+console.log('prezzoKm:',prezzoKm)
 
 // calcolo il prezzo base
 let prezzoBaseKm = numKilometers * prezzoKm
@@ -30,4 +26,4 @@ if(age < 18){
 console.log('prezzo biglietto:',prezzoBaseKm,'età:',age)
 
 // stampo il prezzo del  biglietto nella pagina arrotondandolo ai due decimali
-document.getElementById('prezzo').innerHTML = "Prezzo biglietto: <strong>"+round(prezzoBaseKm,2)+" €</strong>"
+document.getElementById('prezzo').innerHTML = "Prezzo biglietto: <strong>"+ prezzoBaseKm.toFixed(2)+" €</strong>"
